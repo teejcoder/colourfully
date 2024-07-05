@@ -1,0 +1,29 @@
+body {
+    background-color: #FFF8F0;
+}
+h1, h2{
+    font-family: "Wittgenstein", serif;
+    font-optical-sizing: auto;
+}
+
+p, span {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+.results-div {
+    min-height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form {
+    margin-top: 10px;
+}
