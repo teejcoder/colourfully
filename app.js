@@ -51,21 +51,25 @@ app.use(express.static("public"));
 
 //Routes
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  try {
+    res.render("index.ejs");
+  } catch (err) {
+    console.error(err, "Error fetching in app.get/")
+  }
+
 });
 
 app.post("/", upload.single("file-to-upload"), async (req, res) => {
   try {
     // Check if file was uploaded
     if (!req.file) {
-      res.status(400).send("No file uploaded.");
+      res.render("error.ejs");
       return;
     }
     // Upload image to cloudinary
     const result = await cloudinary.uploader.upload(req.file.path);
     const brandURLImage = result.secure_url;
 
-    // save brandURLImage to session
     req.session.brandURLImage = brandURLImage;
 
     // Perform image analysis
@@ -83,9 +87,7 @@ async function detectColorScheme(imageUrl) {
   try {
     console.log(`Detecting color scheme in image..`);
     const color = (await computerVisionClient.analyzeImage(imageUrl, { visualFeatures: ['Color'] })).color;
-
     return color;
-
   } catch (error) {
     console.error("Error detecting color scheme:", error);
   }

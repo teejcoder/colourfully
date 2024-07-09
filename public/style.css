@@ -3,25 +3,38 @@ body {
     background-color: #191923;
     padding: 0;
     margin: 0;
-    background: linear-gradient(45deg, pink, purple);
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(15deg, pink, purple);
     letter-spacing: 2px;
     min-height: 100vh;
+    font-family: "Wittgenstein", serif;
 }
 nav{
-    padding: 10px;
+    padding: 1rem;
     max-width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
     align-content: center;
     flex-direction: row;
     border-bottom: 1px solid #FFF8F0;
 }
+footer{
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #FFF8F0;
+    font-size: 15px;
+}
 a {
     color: #FFF8F0;
+    text-decoration: none;
+} a:hover{
+    color: yellow;
+    text-decoration: underline;
 }
 h1, h2{
-    font-family: "Wittgenstein", serif;
     font-optical-sizing: auto;
 }
 input, label {
@@ -38,7 +51,7 @@ p, span {
     text-overflow: ellipsis;
 
 }.welcome-span{
-    margin-bottom: 50px;
+    margin-bottom: 4rem;
 }
 img{
     display: block;
@@ -46,19 +59,15 @@ img{
     border: 1px solid #FFF8F0;
 }
 .welcome-h1{
-    margin-bottom: 50px;
-}
-.custom-file-upload {
-    display: none;
+    margin-bottom: 3rem;
 }
 .body-wrapper {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: min-content;
-    max-width: 100%;
-    padding: 10px;
+
+    padding: 1rem;
 }
 .results-div {
     display: flex;
@@ -66,7 +75,7 @@ img{
     justify-content: center;
     flex-direction: column;
     max-width: 80%;
-    padding: 30px;
+    padding: 2rem;
     border-radius: 25px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -77,34 +86,40 @@ img{
     max-width: 100%;
     display: flex;
     justify-content: between;
-    margin-top: 20px;
+    margin-top: 1rem;
 }
-.custom-file-upload-label {
+
+.custom-file-upload {
+    display: none;
+  }
+  
+  .custom-file-upload-label, .submit-button {
     display: inline-block;
-    padding: 8px 15px;
+    padding: 1rem 2rem;
     color: #fff;
     background-color: #1360bf;
     border-radius: 4px;
-    cursor: pointer;
-}
-.submit-button{
-    font-family: "Lato", sans-serif;
-    display: inline-block;
-    padding: 8px 15px;
-    color: #fff;
-    background-color: #40C9A2;
-    border-radius: 4px;
     border: none;
     cursor: pointer;
-}
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
   
-.custom-file-upload-label:hover {
+  .submit-button {
+    background-color: #40C9A2;
+  }
+  
+  .custom-file-upload-label:hover, .submit-button:hover {
     background-color: #0056b3;
-}
-#file-upload-filename {
+  }
+  
+  .submit-button:hover {
+    background-color: #339b85;
+  }
+  
+  #file-upload-filename {
     font-style: italic;
-    margin-top: 10px;
-}
-
+    margin-top: 1rem;
+  }
 
   
