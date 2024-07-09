@@ -13,15 +13,37 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-     
-    <div class="results-div">
-      <h1>Colourfully</h1>
-      <span>Upload an image and find the colour scheme</span>
-      <p>Please upload an image below:</p>
-      <form action="/" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file-to-upload">
-        <input type="submit" value="Upload">
-      </form>
-    </div>  
+    <nav>
+      <a href="/">
+        Colourfully
+      </a>
+      <a href="#">
+        Github
+      </a>
+    </nav>
+    <div class="body-wrapper">
+      <div class="results-div">
+        <h1 class="welcome-h1">Colourfully</h1>
+        <span class="welcome-span">Upload an image to find a colour scheme</span>
+
+        <div class="form-container">
+          <form action="/" method="POST" enctype="multipart/form-data">
+
+            <input type="file" name="file-to-upload" id="file-upload" class="custom-file-upload">
+            <label for="file-upload" class="custom-file-upload-label">Choose File</label>
+
+            <input type="submit" id="submit-button" class="submit-button">
+
+          </form>
+        </div>
+        <span id="file-upload-filename"></span>
+      </div>  
+  </div>
+  <script>
+    document.getElementById('file-upload').addEventListener('change', function() {
+      const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+      document.getElementById('file-upload-filename').textContent = fileName;
+    });
+  </script>
   </body>
 </html>

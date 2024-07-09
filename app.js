@@ -61,7 +61,6 @@ app.post("/", upload.single("file-to-upload"), async (req, res) => {
       res.status(400).send("No file uploaded.");
       return;
     }
-
     // Upload image to cloudinary
     const result = await cloudinary.uploader.upload(req.file.path);
     const brandURLImage = result.secure_url;
