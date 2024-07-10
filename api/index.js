@@ -53,7 +53,7 @@ app.use(express.static("public"));
 //Routes
 app.get("/", (req, res) => {
   try {
-    res.render("index.ejs");
+    res.render("index");
   } catch (err) {
     console.error(err, "Error fetching in app.get/")
   }
@@ -64,7 +64,7 @@ app.post("/", upload.single("file-to-upload"), async (req, res) => {
   try {
     // Check if file was uploaded
     if (!req.file) {
-      res.render("error.ejs");
+      res.render("error");
       return;
     }
     // Upload image to cloudinary
@@ -77,7 +77,7 @@ app.post("/", upload.single("file-to-upload"), async (req, res) => {
     const colorScheme = await detectColorScheme(brandURLImage);
 
     // Render results page with detected data
-    res.render("result.ejs", { img: brandURLImage, color:colorScheme,  });
+    res.render("result", { img: brandURLImage, color: colorScheme });
   } catch (err) {
     console.error(err);
     res.status(500).send("Error uploading file and processing.");
@@ -91,6 +91,7 @@ async function detectColorScheme(imageUrl) {
     return color;
   } catch (error) {
     console.error("Error detecting color scheme:", error);
+    throw error; // Rethrow the error to be caught by the calling function
   }
 }
 

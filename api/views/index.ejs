@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Colourfully</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Wittgenstein:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="navbar-title">
+        Colourfully
+      </a>
+      <a href="/"><img src="/logo.png" alt="Colourfully Logo" class="logo"/></a>
+      <a href="https://github.com/teejcoder" target="_blank">
+        Github
+      </a>
+    </nav>
+    <div class="body-wrapper">
+      <div class="results-div">
+        <h1 class="welcome-h1">Colourfully</h1>
+        <span class="welcome-span">Upload an image (50px x 50px) and find a basic colour scheme</span>
+
+        <div class="form-container">
+          <form action="/" method="POST" enctype="multipart/form-data">
+
+            <input type="file" name="file-to-upload" id="file-upload" class="custom-file-upload">
+            <label for="file-upload" class="custom-file-upload-label">Choose File</label>
+            <input type="submit" id="submit-button" class="submit-button">
+            
+          </form>
+        </div>
+        <span id="file-upload-filename"></span>
+      </div>  
+  </div>
+  <footer>Thanks to Microsoft Azure for the Cognitive Services. | Check out my <a href="https://github.com/teejcoder">Github.</a></footer>
+  <script>
+    document.getElementById('file-upload').addEventListener('change', function() {
+      const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+      document.getElementById('file-upload-filename').textContent = fileName;
+    });
+  </script>
+  </body>
+</html>
