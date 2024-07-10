@@ -46,6 +46,7 @@ app.use(session({
 }));
 
 //Server Setup
+app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
@@ -93,4 +94,6 @@ async function detectColorScheme(imageUrl) {
   }
 }
 
-app.listen(process.env.PORT || 3000);
+module.exports = app;
+
+app.listen(process.env.PORT || 2121);
