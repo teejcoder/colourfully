@@ -9,7 +9,7 @@ Live(https://colourfully.vercel.app/)
 
 ## Screenshots
 
-![Colourfully](https://postimg.cc/njTgXkdJ)
+![Colourfully](https://i.postimg.cc/Y9Hn55DK/colourfully.png)
 
 ## Technologies Used
 
