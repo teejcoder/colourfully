@@ -1,8 +1,38 @@
-# Install
 
-`npm install`
+# Colourfully
 
----
+## Description
+
+Colourfully is a web application that leverages Microsoft Azure's Cognitive Services to analyze and extract color schemes from uploaded images
+
+Live(https://colourfully.vercel.app/)
+
+## Screenshots
+
+![Colourfully](https://postimg.cc/njTgXkdJ)
+
+## Technologies Used
+
+- HTML
+- CSS (Flexbox)
+- JavaScript
+- Embedded JavaScript 
+- Node.js
+- Express
+- Multer
+- Vercel
+- Cloudinary
+- Microsoft Azure
+- VS Code
+- Canva, remove.bg, favicon.io
+
+## Installation
+
+Follow these steps to install and set up the project locally.
+
+1. Clone the repository:
+   git clone https://github.com/teejcoder/colourfully.git
+   cd your-repository
 
 # Things to add
 
@@ -22,5 +52,18 @@
 
 `npm start`
 
-
 Image local on our machine, upload to cloudinary, cloudinary spits back a URL which we send to microsoft microsoft uses that hosted URL to do it's machine learning tasks on.
+
+# Install
+
+`npm install`
+
+---
+
+# Acknowledgements
+
+Thanks to Microsoft Azure for providing the robust tools and APIs that made this functionality possible. Their comprehensive services enabled seamless integration and enhanced the project's capabilities in image analysis.
+
+# Contact
+
+https://twitter.com/teejcoder
