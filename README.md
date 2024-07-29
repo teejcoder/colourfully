@@ -30,9 +30,10 @@ Live(https://colourfully.vercel.app/)
 
 Follow these steps to install and set up the project locally.
 
-1. Clone the repository:
-   git clone https://github.com/teejcoder/colourfully.git
-   cd your-repository
+1. git clone https://github.com/teejcoder/colourfully.git
+2. cd your-repository
+3. npm install
+4. npm start
 
 # Things to add
 
@@ -52,7 +53,7 @@ Follow these steps to install and set up the project locally.
 
 `npm start`
 
-Image local on our machine, upload to cloudinary, cloudinary spits back a URL which we send to microsoft microsoft uses that hosted URL to do it's machine learning tasks on.
+Image local on our machine, upload to cloudinary, cloudinary spits back a URL which we send to microsoft microsoft uses that hosted URL to do its machine learning tasks on.
 
 # Install
 
@@ -62,7 +63,7 @@ Image local on our machine, upload to cloudinary, cloudinary spits back a URL wh
 
 # Acknowledgements
 
-Thanks to Microsoft Azure for providing the robust tools and APIs that made this functionality possible. Their comprehensive services enabled seamless integration and enhanced the project's capabilities in image analysis.
+Thanks to Microsoft for providing the API.
 
 # Contact
 
