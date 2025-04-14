@@ -94,10 +94,6 @@ export default function ImageUpload() {
             </button>
           </div>
       </main>
-      
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <p>© {new Date().getFullYear()} Colourfully</p>
-      </footer>
     </div>
   );
 }
