@@ -2,6 +2,7 @@ import { ComputerVisionClient } from "@azure/cognitiveservices-computervision";
 import { ApiKeyCredentials } from "@azure/ms-rest-js";
 import { v2 as cloudinary } from 'cloudinary';
 import { detectColorScheme } from '../../utils/azure';
+import { Vibrant } from 'node-vibrant/node';
 
 // Configure Cloudinary
 cloudinary.config({
@@ -32,11 +33,15 @@ export async function POST(request: Request) {
     // Analyze the image with Computer Vision API
     const colorScheme = await detectColorScheme(imageUrl);
 
+    // Use node-vibrant for more verbose color analysis
+    const palette = await Vibrant.from(imageUrl).getPalette();
+
     // Return results
     return Response.json({
       success: true,
       imageUrl,
       colorScheme,
+      palette, // Include the palette from node-vibrant
     });
   } catch (error) {
     console.error('Error processing image:', error);
