@@ -52,7 +52,7 @@ export default function ImageUpload() {
   };
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div className="text-white grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center">
         <h1 className="text-3xl font-bold">Colourfully</h1>
         
@@ -76,8 +76,13 @@ export default function ImageUpload() {
           </form>
 
           {analysisResult && (
-            <div className="mt-8 p-4 border rounded bg-gray-100">
+            <div className="mt-8 p-4 border rounded">
               <h2 className="text-xl font-bold mb-4">Analysis Result</h2>
+              <img 
+                src={analysisResult.imageUrl} 
+                alt="Uploaded Image" 
+                className="w-full max-w-xs mx-auto mb-4 rounded"
+              />
               <pre className="text-sm whitespace-pre-wrap">
                 {JSON.stringify(analysisResult, null, 2)}
               </pre>

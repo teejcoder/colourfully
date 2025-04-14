@@ -9,15 +9,18 @@ export default function Home() {
       <header className="flex flex-col items-center justify-center h-screen text-center">
         <Vortex
           particleCount={1000}
+          baseHue={123412}
         >
           <h1 className="text-5xl font-bold">Welcome to Colourfully</h1>
           <p className="mt-4 text-lg">Use our AI-driven tools to return a comprehensive colour palette of your images.</p>
-          <Button
-            borderRadius="1.75rem"
-            className="dark:bg-slate-900 text-black text-white border-neutral-200 dark:border-slate-800"
-          >
-            Get Started!
-          </Button>
+          <a href='/image-upload'>
+            <Button
+              borderRadius="1.75rem"
+              className="dark:bg-slate-900 text-black text-white border-neutral-200 dark:border-slate-800"
+            >
+              Get Started!
+            </Button>
+          </a>
         </Vortex>
       </header>
     </div>

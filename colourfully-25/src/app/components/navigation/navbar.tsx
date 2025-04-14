@@ -13,7 +13,7 @@ const navLinks = [
 
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between p-4 bg-black backdrop-blur-sm text-white">
+    <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between p-4 bg-black bg-transparent backdrop-blur-lg text-white">
       <Link href="/">
         <p className="text-lg font-bold">Colourfully</p>
       </Link>
@@ -24,7 +24,7 @@ export default function Navbar() {
         {
           navLinks.map((e, i) => (
             <li key={i}>
-              <Link href={e.link}>
+              <Link href={e.link} className='hover:underline'>
                 {e.title}
               </Link>
             </li>
