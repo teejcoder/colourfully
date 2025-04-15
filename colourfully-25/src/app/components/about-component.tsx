@@ -10,7 +10,7 @@ export default function AboutComponent() {
                         Colourfully is an app that lets users upload an image and returns a comprehensive breakdown of the colour palette in the image.
                     </p>
                     <p>
-                        Colourfully uses Microsoft's Azure Image Analysis, built on advanced computer vision models. It is a powerful AI-powered service that extracts rich visual information from images.
+                        Colourfully uses Microsoft's Azure Image Analysis, built on advanced computer vision models. It is a powerful AI service that extracts rich visual information from images.
                     </p>
                     <p>
                         This app is designed to be simple and easy to use. Users can upload an image by clicking the "Upload" button, and Colourfully will automatically analyze the image and display the colour palette.

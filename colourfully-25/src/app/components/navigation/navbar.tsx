@@ -19,10 +19,10 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between p-4 bg-transparent backdrop-blur-sm text-white">
       <>
-        <Link href="/">
-          <p className="text-lg font-bold mr-2">Colourfully</p>
+        <Link href="/" className='flex items-center justify-center gap-2 mr-auto'>
+          <p className="text-[1.125rem] font-bold mr-2">Colourfully</p>
+          <Image src={Logo} alt="Colourfully Logo" width={25} height={25} />
         </Link>
-        <Image src={Logo} alt="Colourfully Logo" className='mr-auto' width={25} height={25} />
       </>
       <ul className="gap-3 flex items-center justify-center">
         {navLinks.map((e, i) => (

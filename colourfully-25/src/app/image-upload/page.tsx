@@ -1,12 +1,14 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function ImageUpload() {
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [analysisResult, setAnalysisResult] = useState<any>(null);
   const [isClient, setIsClient] = useState(false); // Track if the component is running on the client
+  const [isDragging, setIsDragging] = useState(false); // Track drag state
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     // Ensure this code only runs on the client
@@ -25,6 +27,12 @@ export default function ImageUpload() {
       localStorage.setItem("analysisResult", JSON.stringify(analysisResult));
     }
   }, [analysisResult]);
+
+  const handleDropZoneClick = () => {
+    if (fileInputRef.current){
+      fileInputRef.current.click()
+    }
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,6 +65,7 @@ export default function ImageUpload() {
 
       const analyseData = await analyseResponse.json();
       if (analyseResponse.ok) {
+        console.log(analyseData)
         setAnalysisResult(analyseData); // Store the analysis result
       } else {
         throw new Error(analyseData.error);
@@ -88,26 +97,75 @@ export default function ImageUpload() {
     }
   };
 
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+
+    const droppedFile = e.dataTransfer.files[0];
+    if (droppedFile) {
+      const validTypes = ['image/jpeg', 'image/png', 'image/svg+xml'];
+      const maxSize = 5 * 1024 * 1024; // 5MB
+
+      if (!validTypes.includes(droppedFile.type)) {
+        alert('Invalid file type. Please upload a JPG, PNG, or SVG image.');
+        return;
+      }
+
+      if (droppedFile.size > maxSize) {
+        alert('File size exceeds the 5MB limit.');
+        return;
+      }
+
+      setFile(droppedFile);
+    }
+  };
+
   return (
-    <div className="text-white grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div
+      className={`text-white grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 ${isDragging ? 'bg-pink-200' : ''}`}
+      onDragOver={handleDragOver}
+      onDragLeave={handleDragLeave}
+      onDrop={handleDrop}
+    >
       <main className="flex flex-col gap-[32px] row-start-2 items-center">
-        <h1 className="text-7xl font-bold rainbow-highlight">Colourfully</h1>
+        <h1 className="text-[4.375rem] font-bold rainbow-highlight">Colourfully</h1>
         <span>Here we go!</span>
 
         <form onSubmit={handleSubmit} className="w-full max-w-md">
           <div className="mb-4">
             <label className="block mb-2">Upload an image.</label>
-            <input
-              type="file"
-              accept=".jpg,.jpeg,.png,.svg"
-              onChange={handleFileChange}
-              className="w-full p-2 border rounded"
-            />
+            <div
+              className={`w-full p-4 border-2 border-dashed rounded ${isDragging ? 'border-blue-500 bg-blue-100' : 'border-gray-300'}`}
+              onClick={handleDropZoneClick}
+            >
+              {file ? (
+                <label className="text-center text-gray-500">{file.name}</label>
+              ) : (
+                <label className="text-center text-gray-500">Drag and drop an image here, or click to select a file.</label>
+              )}
+              <input
+                ref={fileInputRef}
+                name="image-drop"
+                type="file"
+                accept=".jpg,.jpeg,.png,.svg"
+                onChange={handleFileChange}
+                className="hidden"
+              />
+            </div>
           </div>
           <button
             type="submit"
             disabled={!file || loading}
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded disabled:bg-gray-400"
+            className="w-full bg-blue-400 text-white py-2 px-4 rounded disabled:rainbow-background"
           >
             {loading ? 'Processing...' : 'Analyze Image'}
           </button>
@@ -115,14 +173,14 @@ export default function ImageUpload() {
 
         {analysisResult && (
           <div className="mt-8 p-4 w-full rounded-xl max-w-2xl mx-auto">
-            <h2 className="text-xl font-bold mb-4">Analysis Result</h2>
+            <h2 className="text-[1.25rem] font-bold mb-4">Analysis Result</h2>
             <img
               src={analysisResult.imageUrl}
               alt="Uploaded Image"
-              className="w-full max-w-xs mx-auto mb-4 rounded-xl"
+              className="w-full mx-auto mb-4 rounded-xl"
             />
             <div className="space-y-4 ">
-              <h3 className="text-lg font-semibold">Dominant Colors</h3>
+              <h3 className="text-[1.125rem] font-semibold">Dominant Colors</h3>
               <div className="flex items-center gap-4">
                 <span className="block w-8 h-8 rounded" style={{ backgroundColor: analysisResult.colorScheme.dominantColorForeground }}></span>
                 <p>Foreground: {analysisResult.colorScheme.dominantColorForeground}</p>
@@ -138,7 +196,7 @@ export default function ImageUpload() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold my-4">Palette</h3>
+              <h3 className="text-[1.125rem] font-semibold my-4">Palette</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {Object.entries(analysisResult.palette).map(([key, value]: any) => (
                   <div key={key} className="flex items-center gap-4">
@@ -148,7 +206,7 @@ export default function ImageUpload() {
                     ></span>
                     <div>
                       <p className="font-medium">{key}</p>
-                      <p className="text-sm text-gray-600">Population: {value.population}</p>
+                      <p className="text-[0.875rem] text-gray-600">Population: {value.population}</p>
                     </div>
                   </div>
                 ))}

@@ -11,8 +11,8 @@ export default function Home() {
           particleCount={1000}
           baseHue={123412}
         >
-          <h1 className="text-7xl font-bold">Welcome to Colourfully</h1>
-          <p className="mt-4 text-lg text-balance">Use our AI-driven tools to return a comprehensive colour palette of your images.</p>
+          <h1 className="text-[4.375rem] font-bold">Welcome to Colourfully</h1>
+          <p className="mt-4 text-[1.125rem] text-balance">Use our AI-driven tools to return a comprehensive colour palette of your images.</p>
           <a href='/image-upload'>
             <Button
               borderRadius="1.75rem"
