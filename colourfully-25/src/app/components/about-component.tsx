@@ -23,10 +23,10 @@ export default function AboutComponent() {
                             Colourfully is built using Next.js, React, TypeScript, Tailwind CSS, Shadcn/ui and Aceternity.
                         </p>
                     </div>
-                    <div className="relative mx-auto">
+                    <div className="relative mx-auto my-8">
                         <Image 
                             src={prodss} 
-                            className="w-full max-h-[600] object-contain rounded-lg shadow-lg border" 
+                            className="w-full max-h-[600] object-contain rounded-lg shadow-lg" 
                             alt="Product screenshot" 
                         />
                     </div>

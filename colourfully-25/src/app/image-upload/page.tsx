@@ -181,7 +181,6 @@ export default function ImageUpload() {
 
         <form onSubmit={handleSubmit} className="w-full max-w-md">
           <div className="mb-4">
-            <label className="block mb-2">Upload an image.</label>
             <div
               className={`w-full p-4 border-2 border-dashed rounded ${isDragging ? 'border-blue-500 bg-blue-100' : 'border-gray-300'}`}
               onClick={handleDropZoneClick}
@@ -189,7 +188,7 @@ export default function ImageUpload() {
               {file ? (
                 <label className="text-center text-gray-500">{file.name}</label>
               ) : (
-                <label className="text-center text-gray-500">Drag and drop an image here, or click to select a file.</label>
+                <label className="text-center text-white">Drag and drop an image here, or click to select a file.</label>
               )}
               <input
                 ref={fileInputRef}
