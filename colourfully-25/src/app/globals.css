@@ -38,19 +38,19 @@ html {
 .rainbow-background {
   background: linear-gradient(
     45deg,
-    #2c1810, /* Deep Bronze */
-    #39FF14, /* Neon Green */
-    #FF69B4, /* Hot Pink */
-    #FF3333, /* Vivid Red */
-    #00FF7F, /* Spring Green */
-    #FF1493, /* Deep Pink */
-    #FF0000, /* Bright Red */
-    #32CD32, /* Lime Green */
-    #1f1013  /* Deep Rose Brown */
+    #00BFFF, /* Deep Sky Blue */
+    #1E90FF, /* Dodger Blue */
+    #8A2BE2, /* Blue Violet */
+    #9932CC, /* Dark Orchid */
+    #4169E1, /* Royal Blue */
+    #0000FF, /* Blue */
+    #BA55D3, /* Medium Orchid */
+    #FF00FF, /* Magenta */
+    #007FFF  /* Azure */
   );
   background-size: 200% 200%;
-  animation: rainbow-shine 4s linear infinite;
-  color: white;
+  animation: rainbow-shine 10s linear infinite;
+  color: white; 
   border: none;
 }
 

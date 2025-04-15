@@ -16,7 +16,7 @@ export default function Home() {
           <a href='/image-upload'>
             <Button
               borderRadius="1.75rem"
-              className="rainbow-highlight dark:bg-slate-900 text-black text-white border-neutral-200 dark:border-slate-800"
+              className="rainbow-background dark:bg-slate-900 text-black text-white border-neutral-200 dark:border-slate-800"
             >
               Get Started!
             </Button>

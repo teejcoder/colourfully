@@ -65,11 +65,11 @@ export default function ImageUpload() {
 
       const analyseData = await analyseResponse.json();
       if (analyseResponse.ok) {
-        console.log(analyseData)
         setAnalysisResult(analyseData); // Store the analysis result
       } else {
         throw new Error(analyseData.error);
       }
+      console.log("ANALYSE DATA >>", analyseData)
     } catch (error) {
       console.error('Processing failed:', error);
     } finally {
@@ -80,7 +80,7 @@ export default function ImageUpload() {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
     if (selectedFile) {
-      const validTypes = ['image/jpeg', 'image/png', 'image/svg+xml'];
+      const validTypes = ['image/jpeg', 'image/jpg', 'image/webp', 'image/png', 'image/svg+xml'];
       const maxSize = 5 * 1024 * 1024; // 5MB
 
       if (!validTypes.includes(selectedFile.type)) {
@@ -112,7 +112,7 @@ export default function ImageUpload() {
 
     const droppedFile = e.dataTransfer.files[0];
     if (droppedFile) {
-      const validTypes = ['image/jpeg', 'image/png', 'image/svg+xml'];
+      const validTypes = ['image/jpeg', 'image/jpg', 'image/webp', 'image/png', 'image/svg+xml'];
       const maxSize = 5 * 1024 * 1024; // 5MB
 
       if (!validTypes.includes(droppedFile.type)) {
@@ -165,7 +165,7 @@ export default function ImageUpload() {
           <button
             type="submit"
             disabled={!file || loading}
-            className="w-full bg-blue-400 text-white py-2 px-4 rounded disabled:rainbow-background"
+            className="w-full rainbow-background text-white py-2 px-4 rounded disabled:rainbow-background"
           >
             {loading ? 'Processing...' : 'Analyze Image'}
           </button>
@@ -177,7 +177,7 @@ export default function ImageUpload() {
             <img
               src={analysisResult.imageUrl}
               alt="Uploaded Image"
-              className="w-full mx-auto mb-4 rounded-xl"
+              className="w-full max-w-lg h-auto mx-auto mb-4 rounded-xl object-contain"
             />
             <div className="space-y-4 ">
               <h3 className="text-[1.125rem] font-semibold">Dominant Colors</h3>
