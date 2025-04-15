@@ -1,17 +1,17 @@
 import React from 'react';
-import ImageUpload from './image-upload/page';
 import { Vortex } from './components/ui/vortex';
 import { Button } from './components/ui/moving-border';
+import AboutComponent from './components/about-component';
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-blue-500 to-purple-600 text-white">
-      <header className="flex flex-col items-center justify-center h-screen text-center">
+    <div className="relative min-h-screen text-white">
+      <header className="relative flex flex-col items-center justify-center h-screen text-center">
         <Vortex
           particleCount={1000}
           baseHue={123412}
         >
-          <h1 className="text-5xl font-bold">Welcome to Colourfully</h1>
+          <h1 className="text-7xl font-bold">Welcome to Colourfully</h1>
           <p className="mt-4 text-lg">Use our AI-driven tools to return a comprehensive colour palette of your images.</p>
           <a href='/image-upload'>
             <Button
@@ -23,6 +23,7 @@ export default function Home() {
           </a>
         </Vortex>
       </header>
+      <AboutComponent/>
     </div>
   );
 }
