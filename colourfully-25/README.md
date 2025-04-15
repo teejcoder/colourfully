@@ -3,7 +3,7 @@
 
 ## Description
 
-Colourfully is a web application that leverages Microsoft Azure's Cognitive Services to analyze and extract color schemes from uploaded images
+Colourfully is an app that lets users upload an image and returns a comprehensive breakdown of the colour palette in the image.
 
 Live(https://colourfully.vercel.app/)
 
@@ -18,43 +18,24 @@ Live(https://colourfully.vercel.app/)
 - Next
 - Vercel
 - Cloudinary
-- Microsoft Azure
+- Microsoft Image Analysis
+- Node Vibrant (verbose colour-palette analysis)
+- Clerk AUTH
 - VS Code
 - Canva, remove.bg, favicon.io
 
-## Installation
+## Roadmap to Prod
 
-Follow these steps to install and set up the project locally.
+- ✅ API endpoints built - 14.apr.25
+- ✅ Typeface and colour scheme - 14.apr.25
+- ✅ Aceternity and Shadcn/ui installed - 14.apr.25
+- ✅ UI design - Landing page - 14.apr.25
+- ✅ UI design - Image analysis - 15.apr.25
+- ✅ Clerk AUTH implemented - 15.apr.25
+- Documentation
+- Test & validate
+- Launch 🚀 
 
-1. git clone https://github.com/teejcoder/colourfully.git
-2. cd your-repository
-3. npm install
-4. npm start
-
-# Things to add
-
-- Create a config folder with a `.env.local` file and add the following as `key = value`
-  - CLOUD_NAME = `your cloudinary cloud name`
-  - CLOUD_API_KEY = `your cloudinary api key`
-  - CLOUD_API_SECRET = `your cloudinary api secret`
-  - MS_COMPUTER_VISION_SUBSCRIPTION_KEY = `your Microsoft Subscription Key`
-  - MS_COMPUTER_VISION_ENDPOINT = `your Microsoft Computer Vision Endpoint`
-  - MS_FACE_ENDPOINT = `your Microsoft Face Endpoint`
-  - MS_FACE_SUB_KEY = `your Microsoft Face Key`
-
----
-
-# Run
-
-`npm start`
-
-Image local on our machine, upload to cloudinary, cloudinary spits back a URL which we send to microsoft microsoft uses that hosted URL to do its machine learning tasks on.
-
-# Install
-
-`npm install`
-
----
 
 # Acknowledgements
 
@@ -62,4 +43,4 @@ Thanks to Microsoft for providing the API.
 
 # Contact
 
-https://twitter.com/teejcoder
+https://tjmb.dev

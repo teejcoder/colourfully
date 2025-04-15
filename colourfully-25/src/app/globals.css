@@ -4,6 +4,36 @@
 html {
   scroll-behavior: smooth;
 }
+@keyframes rainbow-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.rainbow-highlight {
+  background: linear-gradient(
+    45deg,
+    #2c1810, /* Deep Bronze */
+    #39FF14, /* Neon Green */
+    #FF69B4, /* Hot Pink */
+    #FF3333, /* Vivid Red */
+    #00FF7F, /* Spring Green */
+    #FF1493, /* Deep Pink */
+    #FF0000, /* Bright Red */
+    #32CD32, /* Lime Green */
+    #1f1013  /* Deep Rose Brown */
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-shine 4s linear infinite;
+}
 
 @custom-variant dark (&:is(.dark *));
 
