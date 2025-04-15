@@ -2,7 +2,7 @@ import { Button } from "./ui/moving-border";
 
 export default function AboutComponent() {
     return (
-        <section>
+        <section id="about">
             <div className="container mx-auto text-center py-8">
                 <h2 className="text-4xl sm:text-6xl py-4">About</h2>
                 <div className="text-2xl sm:text-4xl px-4 my-6">

@@ -1,10 +1,8 @@
 "use client";
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 
 export default function ImageUpload() {
-  const router = useRouter();
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [analysisResult, setAnalysisResult] = useState<any>(null); // State to store the analysis result
@@ -88,16 +86,6 @@ export default function ImageUpload() {
               </pre>
             </div>
           )}
-
-          <div className="text-center">
-            <p className="mb-4">Sign in to analyze your images</p>
-            <button 
-              onClick={() => router.push('/login')}
-              className="bg-blue-600 text-white py-2 px-4 rounded"
-            >
-              Log In
-            </button>
-          </div>
       </main>
     </div>
   );
