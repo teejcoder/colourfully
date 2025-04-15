@@ -32,6 +32,9 @@ Live(https://colourfully.vercel.app/)
 - ✅ UI design - Landing page - 14.apr.25
 - ✅ UI design - Image analysis - 15.apr.25
 - ✅ Clerk AUTH implemented - 15.apr.25
+- ✅ Implement API fetching - 15.apr.25
+- ✅ UX/UI design - 15.apr.25
+- Links Working
 - Documentation
 - Test & validate
 - Launch 🚀 
