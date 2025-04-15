@@ -106,26 +106,65 @@ export default function ImageUpload() {
     setIsDragging(false);
   };
 
-  const handleDrop = (e: React.DragEvent) => {
+  const handleDrop = async (e: React.DragEvent) => {
     e.preventDefault();
     setIsDragging(false);
-
+  
     const droppedFile = e.dataTransfer.files[0];
     if (droppedFile) {
       const validTypes = ['image/jpeg', 'image/jpg', 'image/webp', 'image/png', 'image/svg+xml'];
       const maxSize = 5 * 1024 * 1024; // 5MB
-
+  
       if (!validTypes.includes(droppedFile.type)) {
         alert('Invalid file type. Please upload a JPG, PNG, or SVG image.');
         return;
       }
-
+  
       if (droppedFile.size > maxSize) {
         alert('File size exceeds the 5MB limit.');
         return;
       }
-
+  
       setFile(droppedFile);
+  
+      // Automatically process the image after setting the file
+      setLoading(true);
+      try {
+        const formData = new FormData();
+        formData.append('file-to-upload', droppedFile);
+  
+        // First, upload the image to Cloudinary
+        const uploadResponse = await fetch('/api/upload', {
+          method: 'POST',
+          body: formData,
+        });
+  
+        const uploadData = await uploadResponse.json();
+        if (!uploadResponse.ok) {
+          throw new Error(uploadData.error);
+        }
+  
+        // Use the uploaded image URL to analyze the image
+        const analyseResponse = await fetch('/api/analyse', {
+          method: 'POST',
+          body: JSON.stringify({ 'image-url': uploadData.imageUrl }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+  
+        const analyseData = await analyseResponse.json();
+        if (analyseResponse.ok) {
+          setAnalysisResult(analyseData); // Store the analysis result
+        } else {
+          throw new Error(analyseData.error);
+        }
+        console.log("ANALYSE DATA >>", analyseData);
+      } catch (error) {
+        console.error('Processing failed:', error);
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -177,7 +216,7 @@ export default function ImageUpload() {
             <img
               src={analysisResult.imageUrl}
               alt="Uploaded Image"
-              className="w-full max-w-lg h-auto mx-auto mb-4 rounded-xl object-contain"
+              className="w-full h-auto mx-auto mb-4 rounded-xl object-contain"
             />
             <div className="space-y-4 ">
               <h3 className="text-[1.125rem] font-semibold">Dominant Colors</h3>

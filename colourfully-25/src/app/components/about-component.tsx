@@ -8,7 +8,7 @@ export default function AboutComponent() {
             <div className="container mx-auto text-center py-4 my-8">
                 <h2 className="text-4xl sm:text-6xl">About</h2>
 
-                <div className="flex flex-col xl:flex-row gap-8 my-8">
+                <div className="flex flex-col xl:flex-row xl:items-center gap-8 my-8">
                     <div className="text-2xl sm:text-3xl px-4 space-y-6 text-balance xl:w-1/2">
                         <p>
                             Colourfully is an app that lets users upload an image and returns a comprehensive breakdown of the colour palette in the image.
@@ -23,10 +23,10 @@ export default function AboutComponent() {
                             Colourfully is built using Next.js, React, TypeScript, Tailwind CSS, Shadcn/ui and Aceternity.
                         </p>
                     </div>
-                    <div className="relative md:w-1/2 mx-auto px-4 md:px-0">
+                    <div className="relative mx-auto">
                         <Image 
                             src={prodss} 
-                            className="h-fit-content object-contain rounded-lg shadow-lg border" 
+                            className="w-full max-h-[600] object-contain rounded-lg shadow-lg border" 
                             alt="Product screenshot" 
                         />
                     </div>
