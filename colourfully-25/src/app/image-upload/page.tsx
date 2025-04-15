@@ -114,14 +114,14 @@ export default function ImageUpload() {
         </form>
 
         {analysisResult && (
-          <div className="mt-8 p-4 border rounded w-full max-w-2xl mx-auto">
+          <div className="mt-8 p-4 w-full rounded-xl max-w-2xl mx-auto">
             <h2 className="text-xl font-bold mb-4">Analysis Result</h2>
             <img
               src={analysisResult.imageUrl}
               alt="Uploaded Image"
-              className="w-full max-w-xs mx-auto mb-4 rounded"
+              className="w-full max-w-xs mx-auto mb-4 rounded-xl"
             />
-            <div className="space-y-4">
+            <div className="space-y-4 ">
               <h3 className="text-lg font-semibold">Dominant Colors</h3>
               <div className="flex items-center gap-4">
                 <span className="block w-8 h-8 rounded" style={{ backgroundColor: analysisResult.colorScheme.dominantColorForeground }}></span>
@@ -148,7 +148,7 @@ export default function ImageUpload() {
                     ></span>
                     <div>
                       <p className="font-medium">{key}</p>
-                      <p className="text-sm text-gray-500">Population: {value.population}</p>
+                      <p className="text-sm text-gray-600">Population: {value.population}</p>
                     </div>
                   </div>
                 ))}

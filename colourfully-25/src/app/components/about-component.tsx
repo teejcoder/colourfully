@@ -5,7 +5,7 @@ export default function AboutComponent() {
         <section id="about">
             <div className="container mx-auto text-center py-8">
                 <h2 className="text-4xl sm:text-6xl py-4">About</h2>
-                <div className="text-2xl sm:text-4xl px-4 my-6 space-y-6">
+                <div className="text-2xl sm:text-4xl px-4 my-6 space-y-6 text-balance">
                     <p>
                         Colourfully is an app that lets users upload an image and returns a comprehensive breakdown of the colour palette in the image.
                     </p>
