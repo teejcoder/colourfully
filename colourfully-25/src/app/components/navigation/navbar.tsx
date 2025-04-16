@@ -20,7 +20,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between p-4 bg-transparent backdrop-blur-sm text-white">
       <>
         <Link href="/" className='flex items-center justify-center gap-2 mr-auto'>
-          <p className="text-[1.125rem] font-bold mr-2">Colourfully</p>
+          <p className="text-[1.125rem] font-bold mr-2 rainbow-highlight">Colourfully</p>
           <Image src={Logo} alt="Colourfully Logo" width={25} height={25} />
         </Link>
       </>

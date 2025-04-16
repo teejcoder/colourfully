@@ -25,7 +25,7 @@ If you continue to use the Service after the revised Terms go into effect, then 
 
 ## Privacy Policy
 
-For information about how we collect and use information about users of the Service, please check out our privacy policy available at [PRIVACY].
+For information about how we collect and use information about users of the Service, please check out our privacy policy available at [Privacy Policy](/policy/privacy).
 
 ---
 
@@ -41,6 +41,14 @@ We use [Microsoft Azure Image Analysis](https://azure.microsoft.com/en-us/servic
 
 We also use [node-palette](https://github.com/Meodai/node-palette) to generate color palettes from images. This library processes image data locally on our servers and does not store or share your data.
 
+### Clerk Auth
+
+We use [Clerk](https://clerk.dev) to manage user authentication for Colourfully. When you sign in or create an account, Clerk may collect and process certain personal information, such as your email address, name, and profile picture. This information is used solely for authentication purposes and to provide a seamless user experience.
+
+Clerk operates as a third-party service, and their handling of your data is governed by their own [Privacy Policy](https://clerk.dev/privacy). We recommend reviewing their privacy policy to understand how they manage your data.
+
+By using Colourfully, you agree to Clerk's processing of your authentication data in accordance with their privacy policy.
+
 ---
 
 ## Creating Accounts
@@ -53,13 +61,15 @@ If you discover or suspect any Service security breaches, please let us know as 
 
 ## Your Content & Conduct
 
-Our Service allows you and other users to post, link, and otherwise make available content. You are responsible for the content that you make available to the Service, including its legality, reliability, and appropriateness.
+Our Service allows you and other users to upload images in .jpeg and .png format. You are responsible for the content that you make available to the Service, including its legality, reliability, and appropriateness.
 
-When you post, link, or otherwise make available content to the Service, you grant us the right and license to use, reproduce, modify, publicly perform, publicly display, and distribute your content on or through the Service. We may format your content for display throughout the Service, but we will not edit or revise the substance of your content itself.
+When you upload an image or otherwise make available content to the Service, you grant us the right and license to use, reproduce, modify, publicly perform, publicly display, and distribute your content on or through the Service. We may format your content for display throughout the Service, but we will not edit or revise the substance of your content itself.
 
-Aside from our limited right to your content, you retain all of your rights to the content you post, link, and otherwise make available on or through the Service.
+Aside from our limited right to your content, you retain all of your rights to the content you upload and otherwise make available on or through the Service.
 
-You can remove the content that you posted by deleting it. Once you delete your content, it will not appear on the Service, but copies of your deleted content may remain in our system or backups for some period of time. We will retain web server access logs for a maximum of 24 hours and then delete them.
+Copies of your content may remain in our system (Cloudinary) or backups for some period of time.
+
+---
 
 ### Prohibited Content
 
@@ -86,7 +96,7 @@ You agree that you will not do any of the following in connection with the Servi
 
 ## COLOURFULLY Materials
 
-We put a lot of effort into creating the Service, including the logo and all designs, text, graphics, pictures, information, and other content (excluding your content). This property is owned by us or our licensors, and it is protected by U.S. and international copyright laws. We grant you the right to use it.
+We put a lot of effort into creating the Service, including the logo and all designs, text, graphics, pictures, information, and other content (excluding your content). This property is owned by us or our licensors, and it is protected by Australian and international copyright laws. We grant you the right to use it.
 
 However, unless we expressly state otherwise, your rights do not include:
 
@@ -117,7 +127,7 @@ THE SERVICE AND ANY OTHER SERVICE AND CONTENT INCLUDED ON OR OTHERWISE MADE AVAI
 
 ## Governing Law
 
-The validity of these Terms and the rights, obligations, and relations of the parties under these Terms will be construed and determined under and in accordance with the laws of Victoria, without regard to conflicts of law principles.
+The validity of these Terms and the rights, obligations, and relations of the parties under these Terms will be construed and determined under and in accordance with the laws of Australia, without regard to conflicts of law principles.
 
 ---
 

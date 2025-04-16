@@ -11,16 +11,16 @@ export default function AboutComponent() {
                 <div className="flex flex-col xl:flex-row xl:items-center gap-8 my-8">
                     <div className="text-2xl sm:text-3xl px-4 space-y-6 text-balance xl:w-1/2">
                         <p>
-                            Colourfully is an app that lets users upload an image and returns a comprehensive breakdown of the colour palette in the image.
+                            <span className="rainbow-highlight">Colourfully</span> is an app that lets users upload an image and returns the colour palette present in the image.
                         </p>
                         <p>
-                            Colourfully uses Microsoft's Azure Image Analysis, built on advanced computer vision models. It is a powerful AI service that extracts rich visual information from images.
+                            This app is designed to be simple and easy to use. Users upload an image by dragging & dropping, or clicking, and <span className="rainbow-highlight3">Colourfully</span> will work its magic ✨.
                         </p>
                         <p>
-                            This app is designed to be simple and easy to use. Users can upload an image by clicking the "Upload" button, and Colourfully will automatically analyze the image and display the colour palette.
+                            <span className="rainbow-highlight2">Colourfully</span> uses Microsoft's Azure Image Analysis, built on advanced computer vision models. It is a powerful AI service that extracts rich visual information from images.
                         </p>
                         <p>
-                            Colourfully is built using Next.js, React, TypeScript, Tailwind CSS, Shadcn/ui and Aceternity.
+                            <span className="rainbow-highlight1">Colourfully</span> is built using Next.js, React, TypeScript, Tailwind CSS, Shadcn/ui and Aceternity.
                         </p>
                     </div>
                     <div className="relative mx-auto my-8">
@@ -35,7 +35,7 @@ export default function AboutComponent() {
                 <div className="flex items-center justify-center space-x-8 mt-8">
                     <a href='/image-upload'>
                         <Button
-                            className="rainbow-background text-black text-white border-neutral-200 dark:border-slate-800"
+                            className="rainbow-background1 text-black text-white"
                             borderRadius="1.75rem"
                         >
                             Get Started!
@@ -43,7 +43,7 @@ export default function AboutComponent() {
                     </a>
                     <a href='https://tjmb.dev'>
                         <Button
-                            className="rainbow-highlight text-black text-white border-neutral-200 dark:border-slate-800"
+                            className="rainbow-highlight text-black text-white"
                             borderRadius="1.75rem"
                         >
                             Contact

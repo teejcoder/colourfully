@@ -8,7 +8,7 @@ interface PrivacyAndTosProps {
 
 export default function PrivacyPolicy({content}: PrivacyAndTosProps) {
     return (
-        <section className='prose mx-auto text-white p-6'>
+        <section className='container prose mx-auto text-white p-6'>
             <ReactMarkdown>{content || Privacy}</ReactMarkdown>
         </section>
     )

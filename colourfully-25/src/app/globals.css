@@ -38,20 +38,99 @@ html {
 .rainbow-background {
   background: linear-gradient(
     45deg,
-    #00BFFF, /* Deep Sky Blue */
-    #1E90FF, /* Dodger Blue */
-    #8A2BE2, /* Blue Violet */
-    #9932CC, /* Dark Orchid */
-    #4169E1, /* Royal Blue */
-    #0000FF, /* Blue */
-    #BA55D3, /* Medium Orchid */
-    #FF00FF, /* Magenta */
-    #007FFF  /* Azure */
+    #2c1810, /* Deep Bronze */
+    #39FF14, /* Neon Green */
+    #FF69B4, /* Hot Pink */
+    #FF3333, /* Vivid Red */
+    #00FF7F, /* Spring Green */
+    #FF1493, /* Deep Pink */
+    #FF0000, /* Bright Red */
+    #32CD32, /* Lime Green */
+    #1f1013  /* Deep Rose Brown */
   );
   background-size: 200% 200%;
   animation: rainbow-shine 10s linear infinite;
   color: white; 
   border: none;
+}
+.rainbow-background1 {
+  background: linear-gradient(
+    45deg,
+    #4682B4, /* Steel Blue */
+    #00BFFF, /* Deep Sky Blue */
+    #1E90FF, /* Dodger Blue */
+    #0000FF, /* Blue */
+    #5F9EA0, /* Cadet Blue */
+    #4169E1, /* Royal Blue */
+    #87CEEB, /* Sky Blue */
+    #6495ED, /* Cornflower Blue */
+    #1C86EE  /* Bright Blue */
+  );
+  background-size: 200% 200%;
+  animation: rainbow-shine 10s linear infinite;
+  color: white; 
+  border: none;
+}
+
+/* Updated .rainbow-highlight1 to use only blue palette */
+.rainbow-highlight1 {
+  background: linear-gradient(
+    45deg,
+    #4682B4, /* Steel Blue */
+    #00BFFF, /* Deep Sky Blue */
+    #1E90FF, /* Dodger Blue */
+    #0000FF, /* Blue */
+    #5F9EA0, /* Cadet Blue */
+    #4169E1, /* Royal Blue */
+    #87CEEB, /* Sky Blue */
+    #6495ED, /* Cornflower Blue */
+    #1C86EE  /* Bright Blue */
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-shine 4s linear infinite;
+}
+
+.rainbow-highlight2 {
+  background: linear-gradient(
+    45deg,
+    #9932CC, /* Dark Orchid */
+    #BA55D3, /* Medium Orchid */
+    #DDA0DD, /* Plum */
+    #9400D3, /* Dark Violet */
+    #9370DB, /* Medium Purple */
+    #EE82EE,  /* Violet */
+    #8A2BE2, /* Blue Violet */
+    #DA70D6, /* Orchid */
+    #800080 /* Purple */
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-shine 4s linear infinite;
+}
+
+.rainbow-highlight3 {
+  background: linear-gradient(
+    45deg,
+    #FFDAB9, /* Peach Puff */
+    #FFE4B5, /* Moccasin */
+    #FFD700, /* Gold */
+    #FFA500, /* Orange */
+    #FAFAD2, /* Light Goldenrod Yellow */
+    #FFFF00, /* Yellow */
+    #FFFACD, /* Lemon Chiffon */
+    #FFEFD5, /* Papaya Whip */
+    #FFF8DC  /* Cornsilk */
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-shine 4s linear infinite;
 }
 
 @custom-variant dark (&:is(.dark *));
@@ -176,4 +255,14 @@ html {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Enhancing button styles to make them pop */
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: scale(0.95);
 }

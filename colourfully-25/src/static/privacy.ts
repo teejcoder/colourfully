@@ -1,7 +1,7 @@
 const Privacy = `
 # Privacy Policy
 
-TJMB operates the website "Colourfully" at www.colourfully.vercel.app. I take your privacy seriously. To better protect your privacy, I provide this privacy policy notice explaining the way your personal information is collected and used.
+TJMB operates the website "Colourfully" at www.colourfully.vercel.app. We take your privacy seriously. To better protect your privacy, We provide this privacy policy notice explaining the way your personal information is collected and used.
 
 ---
 
@@ -25,13 +25,11 @@ This website tracks basic information about its visitors. This information inclu
 
 When you upload an image to Colourfully, we process the image to generate a color palette. This involves the use of third-party tools and services:
 
----
 
 ### Azure Image Analysis
 
 We use [Microsoft Azure Image Analysis](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/) to analyze the content of uploaded images. This service may process your image data to extract visual information, such as colors, patterns, and other features. For more information on how Azure handles your data, please review their [Privacy Policy](https://privacy.microsoft.com/).
 
----
 
 ### node-palette
 
@@ -55,19 +53,19 @@ Advertising partners and other third parties may use cookies, scripts, and/or we
 
 ## Security
 
-The security of your personal information is important to me, but remember that no method of transmission over the Internet, or method of electronic storage, is 100% secure. While I strive to use commercially acceptable means to protect your personal information, I cannot guarantee its absolute security.
+The security of your personal information is important to us, but remember that no method of transmission over the Internet, or method of electronic storage, is 100% secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.
 
 ---
 
 ## Changes To This Privacy Policy
 
-This Privacy Policy is effective as of 2025-04-16 and will remain in effect except concerning any changes in its provisions in the future, which will be in effect immediately after being posted on this page. I reserve the right to update or change my Privacy Policy at any time, and you should check this Privacy Policy periodically. If I make any material changes to this Privacy Policy, I will notify you either through the email address you have provided me or by placing a prominent notice on my website.
+This Privacy Policy is effective as of 2025-04-16 and will remain in effect except concerning any changes in its provisions in the future, which will be in effect immediately after being posted on this page. We reserve the right to update or change the Privacy Policy at any time, and you should check this Privacy Policy periodically. If we make any material changes to this Privacy Policy, we will notify you either through the email address you have provided me or by placing a prominent notice on the website.
 
 ---
 
 ## Contact Information
 
-For any questions or concerns regarding the privacy policy, please send me an email at [teejcoder@gmail.com](mailto:teejcoder@gmail.com).
+For any questions or concerns regarding the privacy policy, please send an email to [teejcoder@gmail.com](mailto:teejcoder@gmail.com).
 `;
 
 export default Privacy;

@@ -188,7 +188,7 @@ export default function ImageUpload() {
               {file ? (
                 <label className="text-center text-gray-500">{file.name}</label>
               ) : (
-                <label className="text-center text-white">Drag and drop an image here, or click to select a file.</label>
+                <label className="text-center text-white">Drag and drop an image, or click to select a file.</label>
               )}
               <input
                 ref={fileInputRef}
@@ -202,7 +202,7 @@ export default function ImageUpload() {
             <button
               type="submit"
               disabled={!file || loading}
-              className="w-full rainbow-background text-white py-2 px-4 rounded disabled:rainbow-background"
+              className={`w-full text-white py-2 px-4 rounded ${loading ? `rainbow-background` : 'rainbow-background1'}`}
             >
               {loading ? 'Processing...' : 'Analyze Image'}
             </button>

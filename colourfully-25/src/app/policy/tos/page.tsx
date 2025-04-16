@@ -8,7 +8,7 @@ interface PrivacyAndTosProps {
 
 export default function TermsOfService({content}: PrivacyAndTosProps) {
     return (
-        <section className='container mx-auto text-white p-6'>
+        <section className='container prose mx-auto text-white p-6'>
             <ReactMarkdown>{content || Tos}</ReactMarkdown>
         </section>
     )
