@@ -6,7 +6,7 @@ cloudinary.config({
   api_secret: process.env.CLOUD_API_SECRET,
 });
 
-export async function uploadToCloudinary(buffer: Buffer): Promise<any> {
+export async function uploadToCloudinary(buffer: Buffer): Promise<{ public_id: string; url: string }> {
   return new Promise((resolve, reject) => {
     const uploadStream = cloudinary.uploader.upload_stream(
       { resource_type: 'image' },
@@ -15,7 +15,7 @@ export async function uploadToCloudinary(buffer: Buffer): Promise<any> {
           console.error('Cloudinary upload error:', error);
           reject(new Error('/error'));
         } else {
-          resolve(result);
+          resolve(result as { public_id: string; url: string });
         }
       }
     );

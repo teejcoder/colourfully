@@ -16,7 +16,7 @@ export default function Navbar() {
     },
     {
       title: "GitHub",
-      link: "#",
+      link: "https://github.com/teejcoder",
     },
   ];
 

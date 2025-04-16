@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
     MS_COMPUTER_VISION_SUBSCRIPTION_KEY: process.env.MS_COMPUTER_VISION_SUBSCRIPTION_KEY,
     MS_COMPUTER_VISION_ENDPOINT: process.env.MS_COMPUTER_VISION_ENDPOINT,
   },
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
 };
 
 const withMDX = createMDX({

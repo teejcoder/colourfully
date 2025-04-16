@@ -1,9 +1,10 @@
 import React from 'react'
+import AboutComponent from '../components/about-component';
 
 export default function AboutPage(): React.ReactElement {
   return (
     <div>
-      <h1>About Page</h1>
+      <AboutComponent/>
     </div>
   );
 }

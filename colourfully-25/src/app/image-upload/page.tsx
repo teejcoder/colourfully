@@ -1,18 +1,16 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 export default function ImageUpload() {
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
-  const [analysisResult, setAnalysisResult] = useState<any>(null);
-  const [isClient, setIsClient] = useState(false); // Track if the component is running on the client
-  const [isDragging, setIsDragging] = useState(false); // Track drag state
+  const [analysisResult, setAnalysisResult] = useState<{ imageUrl: string; colorScheme: { dominantColorForeground: string; dominantColorBackground: string; accentColor: string }; palette: Record<string, { rgb: number[]; population: number }> } | null>(null);
+  const [isDragging, setIsDragging] = useState(false); 
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
-    setIsClient(true);
-
     const savedData = localStorage.getItem("analysisResult");
     if (savedData) {
       setAnalysisResult(JSON.parse(savedData));
@@ -203,10 +201,12 @@ export default function ImageUpload() {
         {analysisResult && (
           <div className="mt-8 p-4 w-full rounded-xl max-w-2xl mx-auto">
             <h2 className="text-[1.25rem] font-bold mb-4">Analysis Result</h2>
-            <img
+            <Image
               src={analysisResult.imageUrl}
               alt="Uploaded Image"
               className="w-full h-auto mx-auto mb-4 rounded-xl object-contain"
+              width={500}
+              height={500}
             />
             <div className="space-y-4 ">
               <h3 className="text-[1.125rem] font-semibold">Dominant Colors</h3>
@@ -227,7 +227,7 @@ export default function ImageUpload() {
             <div>
               <h3 className="text-[1.125rem] font-semibold my-4">Palette</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                {Object.entries(analysisResult.palette).map(([key, value]: any) => (
+                {Object.entries(analysisResult.palette).map(([key, value]: [string, { rgb: number[]; population: number }]) => (
                   <div key={key} className="flex items-center gap-4">
                     <span
                       className="block w-8 h-8 rounded"

@@ -1,5 +1,3 @@
-import { ComputerVisionClient } from "@azure/cognitiveservices-computervision";
-import { ApiKeyCredentials } from "@azure/ms-rest-js";
 import { v2 as cloudinary } from 'cloudinary';
 import { detectColorScheme } from '../../utils/azure';
 import { Vibrant } from 'node-vibrant/node';
@@ -11,10 +9,6 @@ cloudinary.config({
   api_key: process.env.CLOUD_API_KEY,
   api_secret: process.env.CLOUD_API_SECRET,
 });
-
-// Initialize the Computer Vision client
-const computerVisionKey = process.env.COMPUTER_VISION_KEY || "";
-const computerVisionEndpoint = process.env.COMPUTER_VISION_ENDPOINT || "";
 
 export async function POST(request: Request) {
   try {

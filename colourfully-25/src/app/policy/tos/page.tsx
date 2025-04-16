@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import Tos from '@/static/tos';
 
 interface PrivacyAndTosProps {
-    content: any;
+    content: string;
 }
 
 export default function TermsOfService({content}: PrivacyAndTosProps) {
