@@ -169,8 +169,6 @@ export default function ImageUpload() {
     >
       <main className="flex flex-col gap-[32px] row-start-2 items-center">
         <h1 className="text-[4.375rem] font-bold rainbow-highlight">Colourfully</h1>
-        <span>Here we go!</span>
-
         <form onSubmit={handleSubmit} className="w-full max-w-md">
           <div className="mb-4 space-y-5 text-center">
             <div

@@ -15,10 +15,6 @@ cloudinary.config({
 // Initialize the Computer Vision client
 const computerVisionKey = process.env.COMPUTER_VISION_KEY || "";
 const computerVisionEndpoint = process.env.COMPUTER_VISION_ENDPOINT || "";
-const computerVisionClient = new ComputerVisionClient(
-  new ApiKeyCredentials({ inHeader: { "Ocp-Apim-Subscription-Key": computerVisionKey } }),
-  computerVisionEndpoint
-);
 
 export async function POST(request: Request) {
   try {

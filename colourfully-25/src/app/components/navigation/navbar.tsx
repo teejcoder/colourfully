@@ -37,9 +37,13 @@ export default function Navbar() {
           </li>
         ))}
 
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
+      <li>
+        <SignedIn>
+          <div className="flex items-center justify-center">
+            <UserButton />
+          </div>
+        </SignedIn>
+      </li>
       </ul>
     </nav>
   );

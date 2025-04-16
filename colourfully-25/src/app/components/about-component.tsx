@@ -14,7 +14,7 @@ export default function AboutComponent() {
                             <span className="rainbow-highlight">Colourfully</span> is an app that lets users upload an image and returns the colour palette present in the image.
                         </p>
                         <p>
-                            This app is designed to be simple and easy to use. Users upload an image by dragging & dropping, or clicking, and <span className="rainbow-highlight3">Colourfully</span> will work its magic ✨.
+                            This app is designed to be simple and easy to use. Users upload an image by dragging & dropping, or clicking, and <span className="rainbow-highlight3">Colourfully</span> will work its magic &#39;✨&#39;.
                         </p>
                         <p>
                             <span className="rainbow-highlight2">Colourfully</span> uses Microsoft's Azure Image Analysis, built on advanced computer vision models. It is a powerful AI service that extracts rich visual information from images.
