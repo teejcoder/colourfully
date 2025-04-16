@@ -11,10 +11,8 @@ export default function ImageUpload() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
-    // Ensure this code only runs on the client
     setIsClient(true);
 
-    // Retrieve persisted data from localStorage
     const savedData = localStorage.getItem("analysisResult");
     if (savedData) {
       setAnalysisResult(JSON.parse(savedData));
@@ -22,7 +20,6 @@ export default function ImageUpload() {
   }, []);
 
   useEffect(() => {
-    // Persist analysisResult to localStorage whenever it changes
     if (analysisResult) {
       localStorage.setItem("analysisResult", JSON.stringify(analysisResult));
     }
@@ -43,7 +40,6 @@ export default function ImageUpload() {
       const formData = new FormData();
       formData.append('file-to-upload', file);
 
-      // First, upload the image to Cloudinary
       const uploadResponse = await fetch('/api/upload', {
         method: 'POST',
         body: formData,
@@ -54,7 +50,6 @@ export default function ImageUpload() {
         throw new Error(uploadData.error);
       }
 
-      // Use the uploaded image URL to analyze the image
       const analyseResponse = await fetch('/api/analyse', {
         method: 'POST',
         body: JSON.stringify({ 'image-url': uploadData.imageUrl }),
@@ -68,7 +63,7 @@ export default function ImageUpload() {
         throw new Error(analyseData.error);
       }
 
-      setAnalysisResult(analyseData); // Store the analysis result
+      setAnalysisResult(analyseData);
     } catch (error) {
       console.error('Processing failed:', error);
       window.location.href = '/error';
@@ -127,13 +122,11 @@ export default function ImageUpload() {
   
       setFile(droppedFile);
   
-      // Automatically process the image after setting the file
       setLoading(true);
       try {
         const formData = new FormData();
         formData.append('file-to-upload', droppedFile);
   
-        // First, upload the image to Cloudinary
         const uploadResponse = await fetch('/api/upload', {
           method: 'POST',
           body: formData,
@@ -144,7 +137,6 @@ export default function ImageUpload() {
           throw new Error(uploadData.error);
         }
   
-        // Use the uploaded image URL to analyze the image
         const analyseResponse = await fetch('/api/analyse', {
           method: 'POST',
           body: JSON.stringify({ 'image-url': uploadData.imageUrl }),
@@ -158,7 +150,7 @@ export default function ImageUpload() {
           throw new Error(analyseData.error);
         }
   
-        setAnalysisResult(analyseData); // Store the analysis result
+        setAnalysisResult(analyseData);
       } catch (error) {
         console.error('Processing failed:', error);
         window.location.href = '/error';

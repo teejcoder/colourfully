@@ -23,6 +23,35 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Colourfully - TJMB",
   description: "Get the basic colour scheme from a photo.",
+  keywords: ["colour palette", "image analysis", "AI tools", "photo colors"],
+  authors: [{name: "TJMB"}],
+  viewport: "width=device-width, initial-scale=1",
+  robots: "index, follow",
+  alternates: {
+    canonical: "https://colourfully.vercel.app",
+  },
+  openGraph: {
+    title: "Colourfully - TJMB",
+    description: "Get the basic colour scheme from a photo.",
+    url: "https://colourfully.tjmb.dev",
+    images: [
+      {
+        url: "/prod-ss.png",
+        width: 1200,
+        height: 630,
+        alt: "Colourfully Screenshot",
+      },
+    ],
+    siteName: "Colourfully",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Colourfully - TJMB",
+    description: "Get the basic colour scheme from a photo.",
+    images: ["/prod-ss.png"],
+  },
+  themeColor: "#000000",
+  icons: "/favicon.ico",
 };
 
 export default function RootLayout({
