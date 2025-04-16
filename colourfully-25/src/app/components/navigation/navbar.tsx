@@ -1,20 +1,24 @@
+'use client'
+
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '../../../../public/logo.png';
 import { SignedIn, UserButton } from '@clerk/nextjs';
-
-const navLinks = [
-  {
-    title: "About",
-    link: "#about",
-  },
-  {
-    title: "GitHub",
-    link: "#",
-  },
-];
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
+  const pathname = usePathname();
+
+  const navLinks = [
+    {
+      title: "About",
+      link: pathname === '/' ? "#about" : "/about",
+    },
+    {
+      title: "GitHub",
+      link: "#",
+    },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between p-4 bg-transparent backdrop-blur-sm text-white">

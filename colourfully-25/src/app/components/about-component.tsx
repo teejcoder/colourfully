@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function AboutComponent() {
     return (
         <section id="about">
-            <div className="container mx-auto text-center py-4 my-8">
+            <div className="container mx-auto text-center text-white py-4 my-8">
                 <h2 className="text-4xl sm:text-6xl">About</h2>
 
                 <div className="flex flex-col xl:flex-row xl:items-center gap-8 my-8">
