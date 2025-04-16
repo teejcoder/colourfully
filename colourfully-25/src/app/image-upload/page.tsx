@@ -64,14 +64,14 @@ export default function ImageUpload() {
       });
 
       const analyseData = await analyseResponse.json();
-      if (analyseResponse.ok) {
-        setAnalysisResult(analyseData); // Store the analysis result
-      } else {
+      if (!analyseResponse.ok) {
         throw new Error(analyseData.error);
       }
-      console.log("ANALYSE DATA >>", analyseData)
+
+      setAnalysisResult(analyseData); // Store the analysis result
     } catch (error) {
       console.error('Processing failed:', error);
+      window.location.href = '/error';
     } finally {
       setLoading(false);
     }
@@ -80,7 +80,7 @@ export default function ImageUpload() {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
     if (selectedFile) {
-      const validTypes = ['image/jpeg', 'image/jpg', 'image/webp', 'image/png', 'image/svg+xml'];
+      const validTypes = ['image/jpeg', 'image/jpg', 'image/webp', 'image/png'];
       const maxSize = 5 * 1024 * 1024; // 5MB
 
       if (!validTypes.includes(selectedFile.type)) {
@@ -112,11 +112,11 @@ export default function ImageUpload() {
   
     const droppedFile = e.dataTransfer.files[0];
     if (droppedFile) {
-      const validTypes = ['image/jpeg', 'image/jpg', 'image/webp', 'image/png', 'image/svg+xml'];
+      const validTypes = ['image/jpeg', 'image/jpg', 'image/webp', 'image/png'];
       const maxSize = 5 * 1024 * 1024; // 5MB
   
       if (!validTypes.includes(droppedFile.type)) {
-        alert('Invalid file type. Please upload a JPG, PNG, or SVG image.');
+        alert('Invalid file type. Please upload a JPEG or PNG.');
         return;
       }
   
@@ -154,14 +154,14 @@ export default function ImageUpload() {
         });
   
         const analyseData = await analyseResponse.json();
-        if (analyseResponse.ok) {
-          setAnalysisResult(analyseData); // Store the analysis result
-        } else {
+        if (!analyseResponse.ok) {
           throw new Error(analyseData.error);
         }
-        console.log("ANALYSE DATA >>", analyseData);
+  
+        setAnalysisResult(analyseData); // Store the analysis result
       } catch (error) {
         console.error('Processing failed:', error);
+        window.location.href = '/error';
       } finally {
         setLoading(false);
       }
@@ -180,7 +180,7 @@ export default function ImageUpload() {
         <span>Here we go!</span>
 
         <form onSubmit={handleSubmit} className="w-full max-w-md">
-          <div className="mb-4">
+          <div className="mb-4 space-y-5 text-center">
             <div
               className={`w-full p-4 border-2 border-dashed rounded ${isDragging ? 'border-blue-500 bg-blue-100' : 'border-gray-300'}`}
               onClick={handleDropZoneClick}
@@ -199,14 +199,15 @@ export default function ImageUpload() {
                 className="hidden"
               />
             </div>
+            <button
+              type="submit"
+              disabled={!file || loading}
+              className="w-full rainbow-background text-white py-2 px-4 rounded disabled:rainbow-background"
+            >
+              {loading ? 'Processing...' : 'Analyze Image'}
+            </button>
+            <span className='ml-auto text-gray-400 italic'>.jpeg or .png</span>
           </div>
-          <button
-            type="submit"
-            disabled={!file || loading}
-            className="w-full rainbow-background text-white py-2 px-4 rounded disabled:rainbow-background"
-          >
-            {loading ? 'Processing...' : 'Analyze Image'}
-          </button>
         </form>
 
         {analysisResult && (

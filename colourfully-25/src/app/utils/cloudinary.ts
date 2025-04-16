@@ -13,7 +13,8 @@ export async function uploadToCloudinary(buffer: Buffer): Promise<any> {
       { resource_type: 'image' },
       (error, result) => {
         if (error) {
-          reject(error);
+          console.error('Cloudinary upload error:', error);
+          reject(new Error('/error'));
         } else {
           resolve(result);
         }

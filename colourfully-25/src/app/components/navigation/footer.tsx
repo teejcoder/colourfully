@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export default function Footer() {
     return (
@@ -10,6 +11,10 @@ export default function Footer() {
                         <span className="hover:underline">tjmb.dev</span>
                     </a>
                 </p>
+            </div>
+            <div className="flex items-center justify-center text-sm gap-2 w-full">
+                <Link href="/policy/privacy" className="hover:underline">Privacy</Link>
+                <Link href="/policy/tos" className="hover:underline">Terms</Link>
             </div>
         </footer>
     );

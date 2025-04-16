@@ -1,5 +1,6 @@
 import { ComputerVisionClient } from "@azure/cognitiveservices-computervision";
 import { ApiKeyCredentials } from "@azure/ms-rest-js";
+import { NextResponse } from 'next/server';
 
 // Initialize the Computer Vision client
 const computerVisionKey = process.env.COMPUTER_VISION_KEY || "";
@@ -16,13 +17,12 @@ export async function detectColorScheme(imageUrl: string) {
       throw new Error('Invalid image URL. It must be an absolute URL.');
     }
 
-    // Use the Azure SDK's analyzeImage method
     const analysisResult = await computerVisionClient.analyzeImage(imageUrl, { visualFeatures: ['Color'] });
 
     const color = analysisResult.color;
     return color;
   } catch (error) {
     console.error('Error detecting color scheme:', error);
-    throw error; // Rethrow the error to be caught by the calling function
+    return NextResponse.redirect('/error'); // Redirect to the error page
   }
 }

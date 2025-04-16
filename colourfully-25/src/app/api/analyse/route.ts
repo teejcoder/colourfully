@@ -3,6 +3,7 @@ import { ApiKeyCredentials } from "@azure/ms-rest-js";
 import { v2 as cloudinary } from 'cloudinary';
 import { detectColorScheme } from '../../utils/azure';
 import { Vibrant } from 'node-vibrant/node';
+import { NextResponse } from 'next/server';
 
 // Configure Cloudinary
 cloudinary.config({
@@ -24,30 +25,20 @@ export async function POST(request: Request) {
     const { 'image-url': imageUrl } = await request.json();
 
     if (!imageUrl) {
-      return Response.json(
-        { error: 'No image URL provided' },
-        { status: 400 }
-      );
+      return NextResponse.redirect('/error');
     }
 
-    // Analyze the image with Computer Vision API
     const colorScheme = await detectColorScheme(imageUrl);
-
-    // Use node-vibrant for more verbose color analysis
     const palette = await Vibrant.from(imageUrl).getPalette();
 
-    // Return results
-    return Response.json({
+    return NextResponse.json({
       success: true,
       imageUrl,
       colorScheme,
-      palette, // Include the palette from node-vibrant
+      palette,
     });
   } catch (error) {
     console.error('Error processing image:', error);
-    return Response.json(
-      { error: 'Failed to process image' },
-      { status: 500 }
-    );
+    return NextResponse.redirect('/error');
   }
 }

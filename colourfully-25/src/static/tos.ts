@@ -1,4 +1,4 @@
-const tos = `
+const Tos = `
 # COLOURFULLY Terms of Service
 
 **Last Updated: 16 April 2025**
@@ -138,4 +138,4 @@ Please let us know what you think of the Service, these Terms, and, in general, 
 Questions or comments about the Service may be directed to us at the email address [teejcoder@gmail.com](mailto:teejcoder@gmail.com).
 `;
 
-export default TOS;
+export default Tos;
